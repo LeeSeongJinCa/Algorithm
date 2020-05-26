@@ -1,26 +1,28 @@
-function solution(bridge_length, weight, truck_weights) { // (2, 10, [7,4,5,6]): 8
-  var answer = 0;
-  const wholeLength = truck_weights.length;
-  const overBridge = [];
-  const crossingTruck = Array(bridge_length);
-  let sumOfWeight = 0;
-  let time = 0;
+function solution(bridge_length, weight, truck_weights) {
+  let answer = 0, sumOfWeight = 0;
+  const crossingTruck = [];
 
-  crossingTruck[bridge_length - 1] = truck_weights.shift(); // 처음 트럭 출발
+  for (let i = 0; i < bridge_length; i++) crossingTruck.push(0);
 
-  for (let i = 0; overBridge.length === wholeLength; i++) {
-    if (time === 2) {
-      overBridge.push(crossingTruck.shift());
+  let nowTruck = truck_weights.shift();
+
+  crossingTruck.push(nowTruck);
+  crossingTruck.shift();
+  sumOfWeight += nowTruck;
+  answer++;
+
+  while (sumOfWeight) {
+    sumOfWeight -= crossingTruck.shift();
+    nowTruck = truck_weights.shift(); // 대기 트럭 빼기
+
+    if (sumOfWeight + nowTruck <= weight) { // 지나감
+      crossingTruck.push(nowTruck);
+      sumOfWeight += nowTruck;
+    } else { // 못 지나감
+      crossingTruck.push(0);
+      truck_weights.unshift(nowTruck);
     }
-    if (truck_weights[0] + sumOfWeight > weight) {
-      time++;
-      continue;
-    }
-    crossingTruck.push(truck_weights.shift())
+    answer++;
   }
-
-
   return answer;
 }
-
-// 아직 미 성공
