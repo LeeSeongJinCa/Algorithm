@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carRace</title>
+  </head>
+  <body>
+    <div id="carRace">
+      <h1>🏎️ 자동차 경주 게임</h1>
+      <button id="showRace">show</button>
+      <p>
+        자동차 이름을 <strong>5자 이하로</strong> 콤마로 구분하여 입력해주세요.
+      </p>
+      <p>올바른 예) east,west,south,north</p>
+      <div>
+        <input
+          type="text"
+          id="car-names-input"
+          value="east,west,south,north"
+          autofocus
+        />
+        <button id="car-names-submit">확인</button>
+      </div>
+      <div id="count-wrap" style="display: none">
+        <h3>시도할 횟수를 입력해주세요.</h3>
+        <input type="text" id="racing-count-input" />
+        <button id="racing-count-submit">확인</button>
+      </div>
+      <p>📄 <strong>실행 결과</strong></p>
+      <p id="result"></p>
+      <p id="winner"></p>
+      <button style="display: none" id="restart">재시작</button>
+    </div>
+  </body>
+  <script type="module" src="./carRace.js"></script>
+</html>
