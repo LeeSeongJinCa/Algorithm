@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>subwayMap</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid gray;
+        text-align: center;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="subwayMap">
+      <h1>🚇 지하철 노선도 관리</h1>
+      <nav>
+        <button id="station-manager-button">1. 역관리</button>
+        <button id="line-manager-button">2. 노선 관리</button>
+        <button id="section-manager-button">3. 구간 관리</button>
+        <button id="map-print-manager-button">4. 지하철 노선도 출력</button>
+      </nav>
+      <div id="station-wrap" class="hide"></div>
+      <div id="line-wrap" class="hide"></div>
+      <div id="section-wrap" class="hide"></div>
+      <div id="map-print-wrap" class="hide"></div>
+    </div>
+  </body>
+  <script type="module" src="./nav.js"></script>
+  <script src="./subwayMap.js"></script>
+  <script type="module" src="./station.js"></script>
+  <script type="module" src="./line.js"></script>
+  <script type="module" src="./section.js"></script>
+  <script type="module" src="./mapPrint.js"></script>
+</html>
