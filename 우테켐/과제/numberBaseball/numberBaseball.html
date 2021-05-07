@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Baseball</title>
+    <link rel="stylesheet" href="./numberBaseball.html" />
+  </head>
+  <body>
+    <div id="numberBaseball">
+      <div>
+        <h1>⚾ 숫자 야구 게임</h1>
+        <p>
+          <strong>1~9까지의 수</strong>를 중복없이 <strong>3개</strong>를
+          선택해주세요.
+        </p>
+        <p>올바른 예) 139</p>
+        <p>틀린 예) 122</p>
+      </div>
+      <form id="form">
+        <input type="text" id="input" maxlength="3" autofocus />
+        <button type="submit" id="submit">확인</button>
+      </form>
+      <p>📄 결과</p>
+      <p id="result"></p>
+    </div>
+  </body>
+  <script src="./numberBaseball.js"></script>
+</html>
