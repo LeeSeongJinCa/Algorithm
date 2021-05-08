@@ -42,12 +42,15 @@ const displaySectionList = () => {
 
 const removeSection = (e) => {
   const target = e.currentTarget;
-  console.log(target);
-  // const section = target.dataset.id;
-  // if (!confirm("정말 삭제하시겠습니까?")) return;
-  // const idx = lines.findIndex(({ lineName }) => lineName === line);
-  // lines.splice(idx, 1);
-  // target.parentNode.parentNode.remove();
+  const idx = target.dataset.index;
+  const sectionName = sectionVars.target.textContent;
+
+  const line = lines.find(({ lineName: name }) => name === sectionName);
+
+  if (!confirm("정말 삭제하시겠습니까?")) return;
+
+  line.line.splice(idx, 1);
+  target.parentNode.parentNode.remove();
 };
 
 const getTemplate = (index, name) => {
