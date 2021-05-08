@@ -1,6 +1,6 @@
 console.log("constants");
 
-export const stations = [
+const stationsInitial = [
   "인천",
   "동인천",
   "도원",
@@ -14,7 +14,7 @@ export const stations = [
   "당고개",
 ];
 
-export const lines = [
+const linesInitial = [
   {
     lineName: "1호선",
     line: ["인천", "소요산"],
@@ -28,6 +28,10 @@ export const lines = [
     line: ["대화", "오금"],
   },
 ];
+
+export const stations = localStorage.getItem("stations") || stationsInitial;
+
+export const lines = localStorage.getItem("lines") || linesInitial;
 
 export const templates = {
   station: `<div>
