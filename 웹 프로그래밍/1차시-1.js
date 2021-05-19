@@ -1,4 +1,7 @@
 function solution(n) {
+  if (n === 1) {
+    return 1;
+  }
   if (n === 2) {
     return 3;
   }
@@ -9,3 +12,6 @@ function solution(n) {
     return solution(n - 1) * 2 - 1;
   }
 }
+
+console.log(solution(1));
+console.log(solution(8));
